@@ -1,0 +1,312 @@
+*{
+  margin:0;
+  padding:0;
+
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+.inputinpasswordereset{
+  width: 450px;
+  height:60px;
+  margin:4px 2px;
+  border-radius: 30px;
+  background-color: #D9D9D9;
+  font-size: 20px;
+}
+.recover{
+  background-image: url("./images/recoverbg.jpeg");
+  height:  100vh ;
+  margin-top:-150px;
+  background-size: cover;
+
+  background-repeat: no-repeat;
+}
+.inputrecoverpage{
+  width:400px;
+  height:54px;
+  border-radius: 30px;
+  font-size: 20px;
+}
+
+.backbuttton{
+  width:142px;
+  height:59px;
+  border-radius: 60px;
+  margin: 2px 4px;
+}
+.gobutton{
+  width:142px;
+  height:59px;
+  border-radius: 60px;
+  margin: 2px 4px;
+}
+.twobuttonrecover{
+  width: 142px;
+  height: 59px;
+  padding-left: 20px;
+  display: inline-block;
+}
+.text{
+  width:567px;
+  height:64px;
+  border-radius:10%;
+}
+.pwdreset{
+  background-image: url("./images/keyboardsauna.jpeg");
+  
+  background-size: cover;
+  position:absolute;
+  width:100%;
+  height:100%;
+  font-family: "./Fonts/Alumni_Sans";
+}
+.innerrectangle{
+  
+  width:550px;
+  height:400px;
+  margin-top: 150px;
+  margin-left:500px;
+  position:relative;
+  margin-bottom: 350px;
+  
+  
+}
+.innerrectanglerecover{
+  width:550px;
+  height:400px;
+  padding-bottom: 100px;
+  padding-top:200px;
+  margin-top: 150px;
+  margin-left:500px;
+  position:relative;
+  margin-bottom: 350px;
+  
+  /*background: rgba(217, 217, 217, 0.1);
+mix-blend-mode: normal;
+border: 5px solid rgba(230, 76, 214, 0.8);*/
+}
+.uppertext{
+  padding-bottom:10px;
+  font-weight: bold;
+  font-size: 20px;
+}
+.lowertext{
+  padding-bottom:10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+.confirm{
+  background-color: #ddd;
+font-weight: 2000;
+font-size: 15px;
+letter-spacing: 0em;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 30px;
+  width: 200px;
+  height: 40px;
+  color:black;
+}
+.back{
+  background-color: #ddd;
+font-weight: 2000;
+font-size: 15px;
+letter-spacing: 0em;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 30px;
+  width: 120px;
+  height: 30px;
+  color:black;
+}
+
+.FrontPage{
+  display:flex;
+}
+.leftside{
+  background-image: url("./images/scrable.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 380px;
+  height: 760px;
+}
+.word{
+  color:white;
+  font:48px;
+  word-spacing: 20%;
+  letter-spacing: 23%;
+  font-family: Alumni Sans;
+}
+.name{
+  margin-top: 45%;
+  color:white;
+  font-size: 128px;
+  letter-spacing: 41.5%;
+
+}
+*{
+  font-family: url("https://fonts.googleapis.com/css?family=Sofia");
+}
+
+.rigs{
+  background-color: #FF002E;
+  opacity:65%;
+  color:white;
+  margin-top: 60px;
+  background-color: #ddd;
+font-weight:bold;
+font-size: 20px;
+letter-spacing: 0.8em;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 30px;
+  width: 298px;
+  height: 66px;
+  color:white;
+}
+.mouse
+{
+  background-color:#AD00FF;
+  opacity:65%;
+  color:white;
+  margin-top: 20px;
+  background-color: #ddd;
+font-weight:bold;
+font-size: 20px;
+letter-spacing: 0.8em;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 30px;
+  width: 298px;
+  height: 66px;
+  color:white;
+}
+.keyboard{
+  background-color: #009D06;
+  opacity:65%;
+  color:white;
+  margin-top: 20px;
+  background-color: #ddd;
+font-weight:bold;
+font-size: 20px;
+letter-spacing: 0.8em;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 30px;
+  width: 298px;
+  height: 66px;
+  color:white;
+}
+.monitor{
+  background-color:#0038FF;
+  opacity:65%;
+  color:white;
+  margin-top: 20px;
+  background-color: #ddd;
+font-weight:bold;
+font-size: 20px;
+letter-spacing: 0.8em;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 30px;
+  width: 298px;
+  height: 66px;
+  color:white;
+
+}
+.cart{
+  background-color: #2ADCF4;
+  opacity:65%;
+  color:white;
+  margin-top: 20px;
+  background-color: #ddd;
+font-weight:bold;
+font-size: 20px;
+letter-spacing: 0.8em;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 30px;
+  width: 298px;
+  height: 66px;
+  color:white;
+}
+.rightside{
+  background-image: url("./images/computer.jpeg");
+  background-size: cover;
+  width:1200px;
+  height:760px;
+}
+.signout{
+  background-color: #443E3E;
+  margin-top: 150px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

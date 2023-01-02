@@ -1,18 +1,17 @@
-import React from 'react'
-
+import React from 'react';
+import { Link } from 'react-router-dom';
+import "./css/front.css"
 export const Front = () => {
   return (
     <div className='FrontPage'>
-        <head>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia"></link>
-        </head>
         <div className='leftside'>
-            <button className='rigs'>RIGS</button><br/>
-            <button className='mouse'>MOUSE</button><br/>
-            <button className='keyboard'>KEYBOARD</button><br/>
-            <button className='monitor'>MONITOR</button><br/>
+        <Link to='/rigs'><button className='rigs'>RIGS</button></Link><br/>
+        <Link to='/mouse'><button className='mouse'>MOUSE</button><br/></Link>
+        <Link to='/keyboard'><button className='keyboard'>KEYBOARD</button><br/></Link>
+        <Link to='/monitor'><button className='monitor'>MONITOR</button><br/></Link>
             <button className='cart'>CART</button><br/>
-            <button className='signout'>SIGN OUT</button><br/>
+        <Link to='/login'><button className='signout'>SIGN OUT</button><br/></Link>
+        <Link to='/aboutus'><button className='about us'>ABOUT US</button></Link>
         </div>
         <div className='rightside'>
             <h2 className='word'>YOU WANT IT, WE BUILD IT</h2>

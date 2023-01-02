@@ -1,17 +1,19 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+import './css/passwordreset.css'
 const Passwordreset = () => {
   return (
-    <div className='pwdreset'>
+    <body className='pwdreset'>
         <div className='innerrectangle'>
             
         <div style={{color:'white'}} className='uppertext'>ENTER NEW PASSWORD</div>
-        <input type="text"></input><br /><br />
+        <input className='inputinpasswordereset'type="password"></input><br /><br />
         <div style={{color:'white'}} className='lowertext'>CONFIRM NEW PASSWORD</div>
-        <input type="text"></input><br /><br />
-        <button className='confirm'>CONFIRM</button><br /><br />
-        <button className='back'>BACK</button>
+        <input className='inputinpasswordereset' type="password"></input><br /><br />
+        <button className='confirm'><Link to="/login">CONFIRM</Link></button><br /><br />
+        <button className='back'><Link to="/recoverpage">BACK</Link></button>
         </div>
-    </div>
+    </body>
   )
 }
 export default Passwordreset;

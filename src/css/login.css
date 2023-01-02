@@ -1,0 +1,30 @@
+.login{
+    background-image: url(../images/img2.jpeg);
+    height:100vh;
+    overflow: hidden;
+    background-position: center;
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-attachment:fixed;
+    color:white;
+    text-align: center;
+}
+
+.signin{
+    margin-top: 8%;
+}
+.user{
+    font-size: medium;
+    font-weight:80;
+}
+.pass{
+    font-size: medium;
+    font-weight:80;
+}
+
+.loginbtn{
+    color:azure;
+    background-color:#cd1515;
+    border-color: #cd1515;
+    border-radius: 22px;
+}

@@ -1,0 +1,77 @@
+body{
+}
+.rigsfullpage
+{
+  width: auto;
+  height: auto;
+  display:flex;
+  overflow:auto;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.namesidehalfrigs
+{
+    width: 139px;
+    height: auto;
+    background-color: #FC0909;
+    writing-mode: vertical-lr;
+    text-align: center;
+    font-weight:bold;
+    font-size: 50px;
+    letter-spacing: 0.2em;
+    transform: rotate(180deg);
+    font-family:'Alumni Sans';
+
+}
+.products{
+  margin: 0px;
+  background-color:#12082F;
+  padding-top: 30px;
+  padding-bottom: 48px;
+}
+.firstimage
+{
+  width:180px;
+  height: 220px;
+  padding-left:130px;
+  padding-right: 80px;
+}
+.firstrow{
+  display: flex;
+}
+.secondrow{
+  padding-top: 30px;
+  display: flex;
+}
+figcaption{
+  font-family:'Alumni Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 48px;
+letter-spacing: 0.12em;
+color:white;
+text-shadow: 0px 7px 3px #FFFFFF40;
+}
+.backbutton{
+  background-color: red;
+  width:20%;
+  height:10%;
+  border-radius: 30px;
+  font-size: 24px;
+  font-weight: bold;
+  color:black;
+}
+@media only screen and (max-width: 1000px) and (min-width: 300px)
+{
+   .firstrow{
+    display: flex;
+    flex-wrap: wrap;
+   } 
+   .secondrow{
+    display:flex;
+    flex-wrap:wrap;
+   }
+    
+   
+}

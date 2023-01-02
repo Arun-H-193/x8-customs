@@ -1,0 +1,186 @@
+*{
+    font-family:'Alumni Sans';
+    height:auto;
+  }
+.FrontPage{
+    display:flex;
+    height:auto;
+    overflow: hidden;
+  }
+  .leftside{
+    background-image: url("../images/scrable.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 380px;
+    height: 100vh;
+    overflow: hidden;
+    position:relative;
+    z-index:1;
+  }
+  .word{
+    color:white;
+    font:48px;
+    word-spacing: 20%;
+    letter-spacing: 0.5em;
+    margin-top: 50px;
+    font-family: Alumni Sans;
+  }
+  .name{
+    margin-top: 45%;
+    color:white;
+    font-size: 128px;
+    letter-spacing: 0.4em;
+  
+  }
+  button{
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 30px;
+    width: 90%;
+    height: 66px;
+    background-color: #2ADCF4;
+    color:white;
+    margin-top: 20px;
+  font-weight:bold;
+  font-size: 36px;
+  letter-spacing: 0.3em;
+  opacity:100%;
+  }
+  button:hover{
+    opacity:65%;
+    
+  }
+  .rigs{
+    background-color: #FF002E;
+    
+    
+  }
+  .mouse
+  {
+    background-color:#AD00FF;
+    
+  }
+  .keyboard{
+    background-color: #009D06;
+    
+    
+  }
+  .monitor{
+    background-color:#0038FF;
+   
+    
+  
+  }
+  .cart{
+    background-color: #2ADCF4;
+    
+    
+  }
+  .signout{
+    background-color: #443E3E;
+    margin-top: 150px;
+    color:white;
+    font-weight:bold;
+    font-size: 36px;
+    letter-spacing: 0.3em;
+    opacity:100%;
+    
+  }
+  .rightside{
+    background-image: url("../images/computer.jpeg");
+    background-size: cover;
+    width:1200px;
+    height:100vh;
+    overflow: visible;
+  }
+  @media only screen and (max-width: 1069px) and  (min-width:911px;)
+  {
+    button{
+      font-size:24px;
+    }
+    .signout{
+      font-size:12px;
+    }
+    
+  }
+  
+  @media only screen and (max-width: 911px) and (min-width: 300px)
+  {
+    
+    .FrontPage{
+        display: flex;
+        flex-wrap:wrap-reverse;
+        float: inline-end;
+    }
+    .leftside{
+      width: 100vw;
+      height: 100vh;
+    }
+    .rightside{
+      width: auto;
+      height:auto
+    }
+    .signout{
+      font-size:12px;
+    }
+  }
+  @media only screen and (max-width: 720px) and (min-width: 300px)
+  {
+    
+    .FrontPage{
+        display: flex;
+        flex-wrap:wrap-reverse;
+    }
+    .leftside{
+
+      width: 100vw;
+      height: 100vh;
+      background-image: url("../images/phonebg.jpg");
+    }
+    .rightside{
+      width: auto;
+      height: auto;
+    }
+    
+    button{
+      margin-left: 20%;
+      width:80%;
+    }
+    .signout{
+      font-size:12px;
+    }
+   
+  }
+  @media only screen and (max-width: 400px) and (min-width: 300px)
+  {
+    
+    .FrontPage{
+        display: flex;
+        flex-wrap:wrap-reverse;
+    }
+    .leftside{
+      width: 100vw;
+      height: auto;
+      background-image: url("../images/phonebg.jpg");
+    }
+    .rightside{
+      width: auto;
+      height: auto;
+    }
+    button{
+      font-size:20px;
+      width:80%;
+    }
+    .signout{
+      font-size:12px;
+    }
+   
+  }
+  
+  
+  
+  

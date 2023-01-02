@@ -1,0 +1,193 @@
+body{
+    background-color: #000000;
+
+}
+.verify{
+    font-family: 'Alumni Sans';
+    font-size: 50px;
+    position: relative;
+    top: 40px;
+}
+.resettext{
+    font-family: 'Alumni Sans';
+    font-size: 30px;
+    position: relative;
+    top: 50px;
+    color: white;
+    text-align: center;
+}
+.code{
+    font-family: 'Alumni Sans';
+    font-weight: 800;
+    position: absolute;
+    margin-left:220px;
+    width: 86px;
+    height: 64px;
+    left: 678px;
+    top: 280px;
+    background: #FFF3F3;
+}
+.code1{
+    font-family: 'Alumni Sans';
+    font-weight: 800;
+    margin-left:220px;
+    position: absolute;
+    width: 86px;
+    height: 64px;
+    left: 778px;
+    top: 280px;
+    background: #FFF3F3;
+}
+.code2{
+    font-family: 'Alumni Sans';
+    margin-left:220px;
+    font-weight: 800;
+    position: absolute;
+    width: 86px;
+    height: 64px;
+    left: 878px;;
+    top: 280px;
+    background: #FFF3F3;
+}
+.code3{
+    font-family: 'Alumni Sans';
+    margin-left:220px;
+    font-weight: 800;
+    position: absolute;
+    width: 86px;
+    height: 64px;
+    left: 978px;
+    top: 280px;
+    background: #FFF3F3;
+}
+.code4{
+    font-family: 'Alumni Sans';
+    margin-left:220px;
+    font-weight: 800;
+    position: absolute;
+    width: 86px;
+    height: 64px;
+    left: 1078px;
+    top: 280px;
+    background: #FFF3F3;
+}
+.code5{
+    font-family: 'Alumni Sans';
+    margin-left:220px;
+    font-weight: 800;
+    position: absolute;
+    width: 86px;
+    height: 64px;
+    left: 1178px;
+    top: 280px;
+    background: #FFF3F3;
+}
+.reset{
+    padding: 0; 
+    border: none;
+    background: none;
+    font-family: 'Alumni Sans';
+    position: absolute;
+    font-size: 25px;
+    font-weight: 800;
+    margin-left:400px;
+    height: 60px;
+    width:200px;
+    left:860px;
+    top:400px;
+    background: #ff0000;
+    border-radius: 80px;
+}
+input{
+    text-align: center;
+    font-size:50px;
+}
+.resetp{
+    position: relative;
+    left:928px;
+    top:212px;
+
+    font-family: 'Alumni Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 43px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+@media (max-width:899px) and (min-width:500px) {
+    .reset{
+        left: 190px;
+        height: 40px;
+        width: 150px;
+        font-size: 20px;
+    }
+
+  
+    .code{
+        top: 300px;
+        height: 56px;
+        width: 50px;
+        left: 60px;
+    }
+    .code1{
+        top: 300px;
+        height: 56px;
+        width: 50px;
+        left: 125px;
+    }
+    .code2{
+        top: 300px;
+        height: 56px;
+        width: 50px;
+        left: 190px;
+    }
+    .code3{
+        top: 300px;
+        height: 56px;
+        width: 50px;
+        left: 255px;
+    }
+    .code4{
+        top: 300px;
+        height: 56px;
+        width: 50px;
+        left: 320px;
+    }
+    .code5{
+        top: 300px;
+        height: 56px;
+        width: 50px;
+        left: 385px;
+    }
+}
+
+@media (max-width:1600px) and (min-width:900px){
+    .reset{
+        left: 200px;
+    }
+    .code{
+        left: 200px;
+    }
+    .code1{
+        left: 300px;
+    }
+    .code2{
+        left: 400px;
+    }
+    .code3{
+        left: 500px;
+    }
+    .code4{
+        left: 600px;
+    }
+    .code5{
+        left: 700px;
+    }
+}
+
+
+
+

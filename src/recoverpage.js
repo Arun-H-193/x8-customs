@@ -1,20 +1,21 @@
  import React from 'react'
- 
+ import {Link} from 'react-router-dom'
+ import './css/recoverpage.css'
 const Recoverpage = () => {
    return (
-     <div className='recover'>
+     <body className='recover'>
         <div className='innerrectanglerecover'>
-            <h1 style={{color:'white'}}>RECOVER YOUR ACCOUNT</h1>
+            <h1 className='recoverpageh1'>RECOVER YOUR ACCOUNT</h1>
             <br /><br />
             <label style={{color:'white'}}>Please enter your Email ID below</label><br /><br />
-            <input type="text" className='inputrecoverpage'></input><br /><br />   
+            <input type="email" className='inputrecoverpage'></input><br /><br />   
             <div className='twobuttonrecover'>
-            <button className='gobutton'>GO</button>
-            <button className='backbuttton '>BACK</button>
+            <button className='gobutton'><Link to="/otp">GO</Link></button>
+            <button className='backbuttton '><Link to="/login">BACK</Link></button>
             </div>
         </div>
         
-     </div>
+     </body>
    )
  }
- export default Recoverpage
+ export default Recoverpage;

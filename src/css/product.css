@@ -1,0 +1,16 @@
+.card{
+    padding:40px;
+}
+button.addtocartbutton{
+    background-color: lightblue;
+  width: 300px;
+  height:100px;
+  border-radius: 30px;
+  font-size: 24px;
+  font-weight: bold;
+  color:black;
+}
+img.small{
+    width: 300px;
+    height: 400px;
+}

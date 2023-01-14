@@ -7,7 +7,7 @@ import photo5 from './images/rigs5.jpeg'
 import photo6 from './images/rigs6.jpeg'
 import { Link } from 'react-router-dom'
 import "./css/rigs.css"
-const Rigs = () => {
+const Rigsog = () => {
   return (
     <>
     <body>
@@ -55,4 +55,4 @@ const Rigs = () => {
     </>
   )
 }
-export default Rigs;
+export default Rigsog;

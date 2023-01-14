@@ -1,124 +1,129 @@
-import React from "react"
-import {useState} from "react"
-import { Navigate, useNavigate } from "react-router-dom"
-import axios from 'axios'
-import { render } from "@testing-library/react"
-import { Button } from "@mui/material"
+import React, { useState } from 'react'
+import Form from 'react-bootstrap/Form'
+import Button from 'react-bootstrap/Button'
+import { Link,useNavigate } from 'react-router-dom'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './css/signup.css'
 
-const Register=(props)=>{ 
+const Register = () => {
 
-    let history=useNavigate();
-    const [data,setData]=useState({
-        username:"",
-        create_password:"",
-        confirm_password:"",
-        email:"",
-        phone_number:""
+    const history = useNavigate();
+
+    const [inpval, setInpval] = useState({
+        name: "",
+        email: "",
+        phone_no: "",
+        password: ""
     })
-    const handleChange=(e)=>{
-        setData({...data,[e.target.name]:e.target.value});
 
-        // console.log(data)
-    }
+   
 
-    const submitForm=(e)=>{
-        e.preventDefault();
-        const sendData={
-            username:data.username,
-            create_password:data.create_password,
-            confirm_password:data.confirm_password,
-            email:data.email,
-            phone_number:data.phone_number
-        }
-        axios.post('https://6392dd4711ed187986a2f456.mockapi.io/datastore',sendData)
-        .then((result)=>{
-            if (result.data.status == "Invalid")
-            alert('Invalid user');
-            else{
-                history('/login');
+    const [data,setData] = useState([]);
+    console.log(inpval);
+
+    const getdata = (e) => {
+        // console.log(e.target.value);
+
+
+        const { value, name } = e.target;
+        // console.log(value,name);
+
+
+        setInpval(() => {
+            return {
+                ...inpval,
+                [name]: value
             }
         })
+
     }
 
-    
+    const addData = (e) => {
+        e.preventDefault();
 
-    render()
-    {
+        const { name, email, phone_no, password } = inpval;
 
-        return(
-            <>
-                <div className="main-box">
-                    <form onSubmit={submitForm}>
-                        <center>
-                        <div className="row1">
-                            <div className="col1"><h1>SIGN UP</h1></div>
-                        </div>
-                        <div className="row1">
-                            <div className="col1">
-                                <label for="Username" style={{fontSize:"30px"}}>Enter UserName</label></div>
-                            <div className="col1">
-                                <input type="text" name="username" className="Username"
-                                onChange={handleChange} value={data.username} style={{width:"150px",height:"30px",borderRadius:"30px", fontSize:"20px"}}
-                                />
-                            </div>
-                        </div>
+        if (name === "") {
+            toast.error(' name field is requred!',{
+                position: "top-center",
+            });
+        } else if (email === "") {
+             toast.error('email field is requred',{
+                position: "top-center",
+            });
+        } else if (!email.includes("@")) {
+             toast.error('plz enter valid email addres',{
+                position: "top-center",
+            });
+        } else if (phone_no === "") {
+             toast.error('phone number field is requred',{
+                position: "top-center",
+            });
+        }else if (phone_no.length < 10 || phone_no.length>10) {
+                toast.error('enter a valid phone number',{
+                   position: "top-center",
+               });
+        }else if (password === "") {
+             toast.error('password field is requred',{
+                position: "top-center",
+            });
+        } else if (password.length < 9) {
+             toast.error('password length greater 8',{
+                position: "top-center",
+            });
+        } else {
+            console.log("data added succesfully");
+            history("/login")
+            localStorage.setItem("user_Signup",JSON.stringify([...data,inpval]));
 
-                        <div className="row1">
-                            <div className="col1">
-                                <label for="Createpass" style={{fontSize:"30px"}}> Create Password</label></div>
-                            <div className="col1">
-                                <input type="password" name="create_password"className="Createpass"
-                                onChange={handleChange} value={data.create_password} style={{width:"150px",height:"30px",borderRadius:"30px", fontSize:"20px"}}
-                                />
-                            </div>
-                        </div>
+        }
 
-                        <div className="row1">
-                            <div className="col1">
-                                <label for="confirmpass" style={{fontSize:"30px"}}>Confirm Password</label></div>
-                            <div className="col1">
-                                <input type="password" name="confirm_password"className="confirmpass"
-                                onChange={handleChange} value={data.confirm_password} style={{width:"150px",height:"30px",borderRadius:"30px", fontSize:"20px"}}
-                                />
-                            </div>
-                        </div>
-
-                        <div className="row1">
-                            <div className="col1">
-                                <label for="email" style={{fontSize:"30px"}}>Email Id</label></div>
-                            <div className="col1">
-                                <input type="email" name="email"className="email"
-                                onChange={handleChange} value={data.email} style={{width:"150px",height:"30px",borderRadius:"30px", fontSize:"20px"}}
-                                />
-                            </div>
-                        </div>
-
-                        <div className="row1">
-                            <div className="col1">
-                                <label for="phno" style={{fontSize:"30px"}}>Phone Number</label>
-                                </div>
-                            <div className="col1">
-                                <input type="tel" name="phone_number"className="phno"
-                                onChange={handleChange} value={data.phone_number} style={{width:"150px",height:"30px",borderRadius:"30px", fontSize:"20px"}}
-                                />
-                            </div>
-                        </div>
-                        <br/>
-                        <div className="row1">
-                            <div className="col">
-                                <input type='submit'name="submit" value="Create account" style={{background:"black",fontSize:"25px", color:"lime",borderRadius:"50px",border:"6px solid lime",height:"50px",width:"150px"}}></input><br/><br/>
-                            </div>
-                            <Button className="loginbtn" variant="contained" style={{background:"black",color:"red",borderRadius:"50px",border:"6px solid red",width:"100px",height:"30px"}} onClick={()=>{history("/login")}}>back</Button>
-                        </div>
-                        </center>
-                    </form>
-                </div>
-
-
-            </>
-        )
     }
+
+    return (
+        <>
+        <div className='mainbox'>
+            <div className="container mt-3">
+                <section className='d-flex justify-content-between'>
+                    <div className="left_data mt-3 p-3" style={{ width: "100%" }}>
+                        <div className='s2'></div>
+                    <center>
+                        <h1 className='text-center col-lg-6'>SIGN UP</h1>
+                        <Form >
+                            <Form.Group className="mb-3 col-lg-6" controlId="formBasicEmail">
+
+                                <Form.Control type="text" name='name' onChange={getdata} placeholder="Enter Your Name" style={{width:'300px',height:'40px',fontSize:'25px',borderRadius:'30px'}}/>
+                            </Form.Group>
+                            <br/>
+                            <Form.Group className="mb-3 col-lg-6" controlId="formBasicEmail">
+
+                                <Form.Control type="email" name='email' onChange={getdata} placeholder="Enter email" style={{width:'300px',height:'40px',fontSize:'25px',borderRadius:'30px'}}/>
+                            </Form.Group>
+                            <br/>
+                            <Form.Group className="mb-3 col-lg-6" controlId="formBasicEmail">
+
+                                <Form.Control onChange={getdata} name='phone_no' type="text" placeholder="phone number" style={{width:'300px',height:'40px',fontSize:'25px',borderRadius:'30px'}}/>
+                            </Form.Group>
+                            <br/>
+                            <Form.Group className="mb-3 col-lg-6" controlId="formBasicPassword">
+
+                                <Form.Control type="password" name='password' onChange={getdata} placeholder="Password" style={{width:'300px',height:'40px',fontSize:'25px',borderRadius:'30px'}}/>
+                            </Form.Group>
+                            <br/>
+                            <Button className='submit' onClick={addData} type="submit"style={{background:"black",color:"lime",borderRadius:"50px",border:"6px solid lime", width:'150px',fontSize:'25px'}} > 
+                                SUBMIT
+                            </Button><br/>  
+                            <Button className="loginbtn" variant="contained" style={{background:"black",color:"red",borderRadius:"50px",border:"6px solid red", width:'150px', fontSize:'25px'}} onClick={()=>{history("/login")}}>BACK</Button>
+                        </Form>
+                    </center>
+                    </div>
+                </section>
+                <ToastContainer />
+            </div>
+            </div>
+        </>
+    )
 }
 
 export default Register;

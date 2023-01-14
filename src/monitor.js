@@ -16,7 +16,7 @@ function Monitor () {
         <div className='namesidehalfmonitor'>
             <h1>MONITOR</h1>
         </div>
-        <div className='products'>
+        <div className='productsm'>
           <div className='firstrow'>
             <div className='firstblock'>
               <img src={photo1} className="firstimage" alt="legion"></img>
@@ -47,7 +47,10 @@ function Monitor () {
             
             </div>
             <Link to="/front"><button className="backbutton">BACK</button></Link>
-
+            <br />
+            <br />
+            <br />
+            <br />
         </div>
         
 

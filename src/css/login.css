@@ -1,4 +1,4 @@
-.login{
+.mainlogin{
     background-image: url(../images/img2.jpeg);
     height:100vh;
     overflow: hidden;
@@ -9,22 +9,11 @@
     color:white;
     text-align: center;
 }
-
-.signin{
+.s1{
     margin-top: 8%;
 }
-.user{
-    font-size: medium;
-    font-weight:80;
-}
-.pass{
-    font-size: medium;
-    font-weight:80;
-}
-
-.loginbtn{
-    color:azure;
-    background-color:#cd1515;
-    border-color: #cd1515;
-    border-radius: 22px;
+.mb-3 col-lg-6{
+    width: 300px;
+    height: 100px;
+    border-radius: 30px;
 }

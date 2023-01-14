@@ -21,7 +21,9 @@ body{
     font-family:'Alumni Sans';
 
 }
-.products{
+.productsm{
+  width:80%;
+  padding-right:200px;
   height: 100%;
   margin: 0px;
   background-color:#12082F;

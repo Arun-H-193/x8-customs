@@ -33,6 +33,7 @@
   
   }
   button{
+    background-color:#2ADCF4;
     border: none;
     padding: 10px 20px;
     text-align: center;
@@ -42,26 +43,29 @@
     border-radius: 30px;
     width: 90%;
     height: 66px;
-    background-color: #2ADCF4;
     color:white;
     margin-top: 20px;
   font-weight:bold;
   font-size: 36px;
   letter-spacing: 0.3em;
   opacity:100%;
+  
+  font-family:'Alumni Sans';
   }
+  
   button:hover{
     opacity:65%;
     
   }
   .rigs{
-    background-color: #FF002E;
     
+    background-color: #FF002E;
     
   }
   .mouse
   {
     background-color:#AD00FF;
+    
     
   }
   .keyboard{
@@ -70,8 +74,9 @@
     
   }
   .monitor{
-    background-color:#0038FF;
-   
+    background-color: #0037ff;
+    
+  
     
   
   }
@@ -80,7 +85,11 @@
     
     
   }
+
   .signout{
+   
+  
+  font-family:'Alumni Sans';
     background-color: #443E3E;
     margin-top: 150px;
     color:white;

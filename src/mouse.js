@@ -11,10 +11,10 @@ const Mouse = () => {
   return (
     <body>
     <div className='rigsfullpage'>
-        <div className='namesidehalf'>
+        <div className='namesidehalfmouse'>
             <h1>MOUSE</h1>
         </div>
-        <div className='products'>
+        <div className='productsm'>
           <div className='firstrow'>
             <div className='firstblock'>
               <img src={photo1} className="firstimage" alt="asus"></img>
@@ -45,7 +45,10 @@ const Mouse = () => {
             
             </div>
             <Link to="/front"><button className="backbutton">BACK</button></Link>
-
+            <br />
+            <br />
+            <br />
+            <br />
         </div>
         
 

@@ -1,76 +1,120 @@
-import React, { useState } from "react"
-import { useNavigate } from "react-router-dom";
-import axios from 'axios'
-import { Link } from "react-router-dom";
-import { Button } from "@mui/material";
+import React, { useState } from 'react'
+import Form from 'react-bootstrap/Form'
+import Button from 'react-bootstrap/Button'
+import {Link, useNavigate } from 'react-router-dom'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './css/login.css'
-const Login=()=>{
-    let navigate =useNavigate(); 
+import { fontSize } from '@mui/system';
 
-    const [user,setUser]=useState({username:'',password:''})
+const Login = () => {
 
-    const handleChange=(e)=>{
-        setUser({...user,[e.target.name]:e.target.value});
+    const history = useNavigate();
 
-    }
+    const [inpval, setInpval] = useState({
+        email: "",
+        password: ""
+    })
 
-    const submitForm=(e)=>{
-        e.preventDefault();
-        const sendData={
-            username:user.username,
-            password:user.password
-        }
-        axios.get('https://6392dd4711ed187986a2f456.mockapi.io/datastore',sendData)
-        .then((result)=>{
-            if (result.data.status ===''){
-                window.localStorage.setItem('username',result.data.username);
-                window.localStorage.setItem('password',result.data.password);
-                navigate('/component/Home');
+    const [data, setData] = useState([]);
+    console.log(inpval);
+
+    const getdata = (e) => {
+        console.log(e.target.value);
+
+
+        const { value, name } = e.target;
+         console.log(value,name);
+
+
+        setInpval(() => {
+            return {
+                ...inpval,
+                [name]: value
             }
-          
-                
-            
         })
+
     }
-    return(
+
+    const addData = (e) => {
+        e.preventDefault();
+
+        const getuserArr = localStorage.getItem("user_Signup");
+        console.log(getuserArr);
+
+        const { email, password } = inpval;
+        if (email === "") {
+            toast.error('email field is requred', {
+                position: "top-center",
+            });
+        } else if (!email.includes("@")) {
+            toast.error('plz enter valid email addres', {
+                position: "top-center",
+            });
+        } else if (password === "") {
+            toast.error('password field is requred', {
+                position: "top-center",
+            });
+        } else if (password.length < 9) {
+            toast.error('password length greater 8', {
+                position: "top-center",
+            });
+        } 
+        else {
+
+            if (getuserArr && getuserArr.length) {
+                const userdata = JSON.parse(getuserArr);
+                const userlogin = userdata.filter((el, k) => {
+                    return el.email === email && el.password === password
+                });
+
+                if (userlogin.length === 0) {
+                    alert("invalid details")
+                } else {
+                    console.log("user login succesfulyy");
+
+                    localStorage.setItem("user_login", JSON.stringify(userlogin))
+
+                    history('/front')
+                }
+            }
+        }
+
+    }
+
+    return (
         <>
-            <div className="login">
-                <form method="post" name="loginform" onSubmit={submitForm}>
-                    <div className="signin">
-                        <div className="row">
-                            <div className="col"><h1>SIGN IN</h1></div>
-                        </div>
-                        <div className="row">
-                            <div classname="user">
-                                <label for="loginusername">username</label>
-                                <input type="text" name="username" className="loginusername"onChange={handleChange} value={user.username} style={{borderRadius:"10px",height:"30px",marginLeft:"20px",width:"150px", fontSize:"20px"}}
-                                />
-                            </div>
-                        
-                        </div>
-                        <br/>
-                        <div className="row">
-                            <div classname="pass">
-                                <label for="loginpass">Password</label>
-                                <input type="password" name="password" className="loginpass"onChange={handleChange} value={user.password} style={{borderRadius:"10px",height:"30px",marginLeft:"20px",width:"150px", fontSize:"20px"}}
-                                /> 
-                            </div>
-                        </div>
-                        <br/>
-                        <div className="row">
-                            <div classname="col"></div>
-                            <div className="col">
-                                <Link to='/front'><input type="submit" name="submit" value="LOGIN" style={{fontSize:"24px",fontWeight:"bold",background:"red",color:"white",borderRadius:"50px",height:"50px",width:"150px",borderColor:"red"}}></input></Link>
-                            </div>
-                        </div>
+        <div className='mainlogin'>
+            <div className="container mt-3">
+                <section className='d-flex justify-content-between'>
+                    <div className="left_data mt-3 p-3" style={{ width: "100%" }}>
+                        <div className='s1'>
+                        <h1 className='text-center col-lg-10'>SIGN IN</h1>
+                        <Form >
+
+                            <Form.Group className="mb-3 col-lg-6" controlId="formBasicEmail">
+
+                                <Form.Control type="email" name='email' onChange={getdata} placeholder="Enter email" style={{width:'300px',height:'40px',fontSize:'25px',borderRadius:'30px'}} />
+                            </Form.Group>
+                            <br/>
+                            <Form.Group className="mb-3 col-lg-6" controlId="formBasicPassword">
+
+                                <Form.Control type="password" name='password' onChange={getdata} placeholder="Password" style={{width:'300px',height:'40px',fontSize:'25px',borderRadius:'30px'}}/>
+                            </Form.Group>
+                            <br/>
+                            <Button variant="primary" className='col-lg-6' onClick={addData} type="submit" style={{fontSize:"18px",fontWeight:"bold",background:"red",color:"white",borderRadius:"50px",height:"40px",width:"110px",borderColor:"red"}}>
+                                SUBMIT
+                            </Button>
+                            
+                            <br/><br/>
+                        </Form>
+                        <Link to="/recoverpage"style={{color:'aqua',fontSize:'20px'}}>forgot password?</Link><br/><br/>
+                        <Link to="/signup"style={{color:'aqua',fontSize:'20px'}}>Create account</Link>
                     </div>
-                </form>
-                <br />
-                <div className="links">
-                    <Link to="/recoverpage"style={{color:'aqua', fontSize:"24px"}}>forgot password?</Link><br/><br/>
-                    <Link to="/signup"style={{color:'aqua', fontSize:"24px"}}>Create account</Link>
-                </div>
-            
+                    </div>
+                </section>
+                <ToastContainer />
+            </div>
             </div>
         </>
     )
